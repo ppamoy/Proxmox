@@ -162,7 +162,7 @@ function default_settings() {
   CPU_TYPE=" -cpu host"
   CORE_COUNT="2"
   RAM_SIZE="4096"
-  BRG="vmbr0"
+  BRG="vmbr1"
   MAC="$GEN_MAC"
   VLAN=""
   MTU=""
@@ -292,9 +292,9 @@ function advanced_settings() {
     exit-script
   fi
 
-  if BRG=$(whiptail --backtitle "Proxmox VE Helper Scripts" --inputbox "Set a Bridge" 8 58 vmbr0 --title "BRIDGE" --cancel-button Exit-Script 3>&1 1>&2 2>&3); then
+  if BRG=$(whiptail --backtitle "Proxmox VE Helper Scripts" --inputbox "Set a Bridge" 8 58 vmbr1 --title "BRIDGE" --cancel-button Exit-Script 3>&1 1>&2 2>&3); then
     if [ -z $BRG ]; then
-      BRG="vmbr0"
+      BRG="vmbr1"
       echo -e "${DGN}Using Bridge: ${BGN}$BRG${CL}"
     else
       echo -e "${DGN}Using Bridge: ${BGN}$BRG${CL}"
